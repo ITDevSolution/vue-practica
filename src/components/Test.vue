@@ -15,7 +15,8 @@
                </li>
           </ul>
           <hr>
-          <p> {{ guion() }}  </p>
+          <input type="text" v-model="user.firstName">
+          <button v-on:click="saludar(user.firstName)">Click ME!</button>
      </div>
 </template>
 
@@ -36,18 +37,14 @@ export default {
         { title: "dinner" },
         { title: "play" },
         { title: "study" }
-      ],
-      guion : function(){
-        
-          for (let index = 0; index < this.tasks.length; index++) {
-              if(this.tasks[3].title == "study"){
-                return this.tasks[3]
-              }
-              
-          }        
-          
-      }
+      ]
       
+    }
+  },
+
+  methods: {
+    saludar(name){
+      alert('hello ' + name)
     }
   }
 }
