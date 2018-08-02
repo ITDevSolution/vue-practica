@@ -1,20 +1,39 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <!-- <img src="./assets/logo.png">
     <HelloWorld/>
-    <Test/>
+    <Test msg="hello world from father class" />
+    <User /> -->
+    <h1>NAVEGACION VUE-ROUTER</h1>
+    <nav>
+      <ul>
+        <li>
+          <router-link to="/">User</router-link>
+        </li>
+        <li>
+          <router-link to="/test">Test</router-link>
+        </li>
+        <li>
+          <router-link to="/HelloWorld">HelloWorld</router-link>
+        </li>
+      </ul>
+    </nav>
+
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
 import Test from './components/Test'
+import User from './components/User'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    Test
+    Test,
+    User
   }
 }
 </script>
